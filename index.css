@@ -1,0 +1,319 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: #fff;
+}
+.navbar{
+    background-color: rgb(245, 245, 245);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top :0%;
+    position: fixed;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+   
+    z-index: 4;
+}
+
+.logo{
+    height: 30px;
+    width: 60px;
+    padding: 10px  20px;
+    display: flex;
+
+}
+
+.logo img{
+    height: 50px;
+    object-fit:contain;
+    mix-blend-mode:color-burn;
+    
+}
+.logo ul{
+    list-style: none;
+  
+}
+.logo ul li h1{
+    font-size: 20px;
+    padding-top: 8px;
+    
+}
+.logo h2{
+    font-size: 12px;
+}
+
+ .navbar #nav{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    
+    
+    
+}
+.navbar #nav li{
+    
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+    
+
+}
+.navbar #nav li select{
+    background: transparent;
+    border: 0px;
+    font-size: 18px;
+}
+.navbar #nav li a{
+    text-decoration: none;
+    color: black;
+} 
+.nav1{
+    position: relative;
+    left: 350px;
+    margin-top: 20px;
+}
+
+/* Reset some default styles for buttons */
+
+
+/* Style the container for the login button */
+.login-container {
+    position: relative;
+    right: -525px;
+    margin-top: 18px;
+    z-index: 2;
+}
+
+/* Style the login button */
+/* .login-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* second navbar */
+
+.navbar2{
+    
+    height: 50px;
+    background-color: #ffff;
+    position: relative;
+    padding-top: 70px;
+    display: flex;
+    
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar2 ul{
+    list-style: none;
+    display: flex;
+    padding: 5px;
+}
+.navbar2 ul li{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* search  */
+/* Style the search container */
+header{
+  
+  height: 59px;
+}
+.search {
+  display: flex;
+  justify-content: right;
+    position: relative;
+    
+    
+    align-items: center;
+    padding-right: 50px;
+    
+    
+    /* position: relative;
+    margin-left: 1000px;
+    margin-top: -42px */
+}
+
+
+/* Style the search input */
+/* search{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-right: 5px;
+    width: 50px;
+    height: 20px;
+    flex: 1; 
+}
+/* Takes up remaining space in the container */
+
+#search{
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.search_inputtag{
+  margin: 10px;
+  margin-top: 16px;
+}
+.header{
+  
+  display: flex;
+  justify-content: space-between;
+
+  height: 25px;
+ 
+}
+p{
+  margin-top: 10px;
+}
+/* Style the search button */
+.button{
+  height: 30px;
+  width: 80px;
+  padding: 5px;
+  border: 1px solid;
+  background-color: #f1f2f3;
+  color: #000000;
+  border-radius: 5px;
+  margin-top: 8px;
+
+  animation: 0.2s;
+  
+}
+
+/* Style the button on hover */
+.button:hover {
+    background-color: #f0f0f0;
+    color: blue;
+    transform: 0.2s;
+}
+
+
+
+
+
+
+/* vertical bar   */
+
+
+.wrapper{
+  display: flex;
+  position: relative;
+ 
+  
+}
+
+.wrapper .sidebar{
+  width: 230px;
+  height: 100%;
+  background: #f1f3f4;
+  padding: 30px 0px;
+  position:absolute;
+  
+  
+}
+
+.wrapper .sidebar h2{
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  
+  padding: 15px;
+  border-bottom: 1px solid #040405;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  height: 100%;
+}    
+
+.wrapper .sidebar ul li a{
+
+  color: #000000;
+  text-decoration: none;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #f5f5f5;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: blue;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  margin-left: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+@media (max-height: 500px){
+  .social_media{
+    display: none !important;
+
+  }
+}

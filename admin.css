@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+                                                                /* header */
+header{
+    background: black;
+    height: 7vh;
+    width: 100%;
+    color: white;
+    /* font-size: 1.6rem; */
+    display: flex;
+}
+.top{
+    margin-left: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-basis: 50%; */
+}
+.greet{
+    font-size: 1.6rem;
+}
+span > a{
+    font-size: 1.25rem;
+    /* text-decoration: underline; */
+    color: white;
+}
+.logout{
+    margin: 0px 20px 0px 20px;
+    order: 3;
+}
+.search{
+    display: flex;
+    margin-right:10px;
+    justify-content: end;
+    align-items: center;
+    flex-grow: 1;
+    order: 2;
+    /* flex-basis: 50%; */
+}
+span>input{
+    /* line-height: 2.5; */
+    height: 65%;
+    font-size: larger;
+}
+.sbtn{
+    font-size: large;
+    height: 70%;
+    margin-left: 5px;
+}
+                                                                /* main */
+main{
+    width: 100%;
+    height: 86vh;
+    font-size: 1.5rem;
+}
+div{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+table,td,th{
+    margin-top: 10px;
+    /* display: flex; */
+    border: solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+.ed{
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    /* margin: 5px; */
+}
+.ed:hover{
+    cursor: pointer;
+}
+a{
+    /* background: #000; */
+    text-decoration: none;
+    /* padding: 10px 20px; */
+}
+                                                                /* footer */
+footer{
+    background: black;
+    height: 7vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+}
