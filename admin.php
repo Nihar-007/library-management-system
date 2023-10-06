@@ -103,5 +103,4 @@ if ($_SESSION['login'] != true) {
         document.writeln(a);
     }
 </script>
-
 </html>
