@@ -3,7 +3,7 @@ session_start();
 // $sno = $_SESSION['sno'];
 $sno = $_GET['sno_delete'];
 $conn = mysqli_connect('localhost','root','','miniproject');
-$sql = "DELETE from `user` where `sno` = $sno";
+$sql = "DELETE from `login` where `sno` = $sno";
 $result = mysqli_query($conn,$sql);
 echo $sno;
 if($result){

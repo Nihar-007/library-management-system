@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "miniproject");
-$sql = "SELECT * from `user`";
+$sql = "SELECT * from `login`";
 $result = mysqli_query($conn, $sql);
 // $row1=mysqli_fetch_assoc($result);
 session_start();
@@ -39,11 +39,11 @@ if ($_SESSION['login'] != true) {
             <table>
                 <thead>
                     <tr>
+                        <th>S.no</th>
                         <th>Name</th>
                         <th>Username</th>
-                        <th>Books Taken</th>
-                        <th>Return time</th>
-                        <th>Charges</th>
+                        <th>Password</th>
+                        <th>Created On</th>
                         <th>Options</th>
                     </tr>
                 </thead>
@@ -56,16 +56,16 @@ if ($_SESSION['login'] != true) {
                             $nosearch = false;
                             if ($nosearch == false) {
                                 $isearch = $_POST['isearch'];
-                                $sql = "SELECT * from `user` where `uname` like '%$isearch%'";
+                                $sql = "SELECT * from `login` where `uname` like '%$isearch%'";
                                 $result = mysqli_query($conn, $sql);
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $_SESSION['sno'] = $row['sno'];
                                     echo "<tr>
                                 <td>" . $num . "</td>
+                                <td>" . $row['fname']." ".$row['lname']. "</td>
                                 <td>" . $row['uname'] . "</td>
-                                <td>" . $row['books_taken'] . "</td>
-                                <td>" . $row['return_time'] . "</td>
-                                <td>" . $row['charge'] . "</td>
+                                <td>" . $row['pwd'] . "</td>
+                                <td>" . $row['created_on'] . "</td>
                                 <td><a href='edit.php?sno_edit=" . $row['sno'] . "'><button class='ed'>Edit</button></a>
                                             <a href='delete.php?sno_delete=" . $row['sno'] . "'><button class='ed'>Delete</button></a></td>
                                         </tr>";
@@ -78,10 +78,10 @@ if ($_SESSION['login'] != true) {
                                 $_SESSION['sno'] = $row['sno'];
                                 echo "<tr>
                                 <td>" . $num . "</td>
+                                <td>" . $row['fname']." ".$row['lname'] . "</td>
                                 <td>" . $row['uname'] . "</td>
-                                <td>" . $row['books_taken'] . "</td>
-                                <td>" . $row['return_time'] . "</td>
-                                <td>" . $row['charge'] . "</td>
+                                <td>" . $row['pwd'] . "</td>
+                                <td>" . $row['created_on'] . "</td>
                                 <td><a href='edit.php?sno_edit=" . $row['sno'] . "'><button class='ed'>Edit</button></a>
                                 <a href='delete.php?sno_delete=" . $row['sno'] . "'><button class='ed'>Delete</button></a></td>
                                 </tr>";

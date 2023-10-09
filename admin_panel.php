@@ -41,8 +41,8 @@ if ($_SESSION['login'] != true) {
       <div class="nav1">
         <ul id="nav">
           <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a href="about_us.php">ABOUT US</a></li>
+          <li><a href="contact_us.php">CONTACT</a></li>
           <li><a href="#">REQUEST'S</a></li>
           <li><a href="logout.php">LOGOUT</a></li>
         </ul>
@@ -50,17 +50,17 @@ if ($_SESSION['login'] != true) {
 
       <div class="nav-right">
         <!-- <div> -->
-          <form action="#" method="post" class="search-bar">
-            <input type="text" name="search-query" placeholder="Search" />
-            <button type="submit" class="search-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" stroke-width="2" stroke="black" class="w-4 h-4" color="black">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </button>
-          </form>
-          <div class="nav-icon">
-            <button style="height: 18px; border: 0px;"><i class="fa-solid fa-bars fa-2xl"></i></button>
-          </div>
+        <form action="#" method="post" class="search-bar">
+          <input type="text" name="search-query" placeholder="Search" />
+          <button type="submit" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" stroke-width="2" stroke="black" class="w-4 h-4" color="black">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
+        </form>
+        <div class="nav-icon">
+          <button style="height: 18px; border: 0px;"><i class="fa-solid fa-bars fa-2xl"></i></button>
+        </div>
         <!-- </div> -->
       </div>
 
@@ -89,7 +89,7 @@ if ($_SESSION['login'] != true) {
         </ul>
       </div>
 
-      <!-- books          coding      start -->
+      <!-- books coding start -->
 
       <div class="info">
         <!-- First book self -->
@@ -109,7 +109,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                      <p>".$row['b_name']."</p></div>";
+                      <p>" . $row['b_name'] . "</p></div>";
                 // echo "<div>".$row['b_name']."</div>";
               }
               ?>
@@ -135,7 +135,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                <p>".$row['b_name']."</p></div>";
+                <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
             </div>
@@ -159,7 +159,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                <p>".$row['b_name']."</p></div>";
+                <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
             </div>
@@ -184,7 +184,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                <p>".$row['b_name']."</p></div>";
+                <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
             </div>
@@ -210,7 +210,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                <p>".$row['b_name']."</p></div>";
+                <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
             </div>
@@ -218,7 +218,6 @@ if ($_SESSION['login'] != true) {
         </div>
 
         <!-- sixth book self -->
-
 
         <div id="slider-container">
           <h1>ANIMES</h1>
@@ -236,7 +235,7 @@ if ($_SESSION['login'] != true) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
                 echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
-                <p>".$row['b_name']."</p></div>";
+                <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
             </div>
@@ -280,7 +279,6 @@ if ($_SESSION['login'] != true) {
       </div>
     </div>
   </aside>
-
 </body>
 
 </html>
