@@ -1,3 +1,14 @@
+<?php
+$conn = mysqli_connect("localhost","root","","miniproject");
+$uname = $_POST['username'];
+$bname = $_POST['username'];
+$uname = $_POST['username'];
+$uname = $_POST['username'];
+$sql = "INSERT into `requests` () values ()";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +27,14 @@
             padding: 29px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            transform: scale(0);
+            /* transform: scale(0); */
             transition: all ease .5s;
             padding-right: 43px;
         }
          
-        .issue-book-container.active-popup-issue{
+        /* .issue-book-container.active-popup-issue{
             transform: scale(1);
-        }
+        } */
 
 
         h1 {
@@ -68,12 +79,12 @@
     </style>
 </head>
 <body>
-    <div class="btn_container">
+    <!-- <div class="btn_container">
         <button class="btn">Issue Book</button>
-    </div>
+    </div> -->
     <div class="issue-book-container">
         <h1>Book Issuance Form</h1>
-        <form action="#">
+        <form method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
 
@@ -94,7 +105,7 @@
         </form>
     </div>
 
-    <script>
+    <!-- <script>
        const container = document.querySelector('.issue-book-container');
         const issuelink = document.querySelector('.btn');
         const cancelBtn = document.querySelector('.cancel-btn');
@@ -106,6 +117,6 @@
         cancelBtn.addEventListener('click', () => {
             container.classList.remove('active-popup-issue');
         });
-    </script>
+    </script> -->
 </body>
 </html>

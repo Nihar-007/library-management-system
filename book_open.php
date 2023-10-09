@@ -52,7 +52,7 @@
     <main>
         <form method="post">
             <div>
-                <p>Book Image : <img src="images/<?php echo $row['b_image']; ?>" alt="<?php echo $row['b_name']; ?>"></p>
+                <p>Book Image : <img src="images/<?php echo $row['b_image']; ?>" alt="<?php echo $row['b_name']; ?>" width="150px"></p>
                 <p>Book Name : <?php echo $bname; ?></p>
                 <p>Author Name : <?php echo $row['b_author']; ?></p>
                 <p>Publisher : <?php echo $row['b_publisher']; ?></p>

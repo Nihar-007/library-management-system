@@ -18,7 +18,7 @@ if ($_SESSION['login'] != true) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="addmin.css">
+  <link rel="stylesheet" href="admin_panel.css">
   <title>Library management system</title>
 
 </head>
@@ -43,7 +43,7 @@ if ($_SESSION['login'] != true) {
           <li><a href="#">HOME</a></li>
           <li><a href="about_us.php">ABOUT US</a></li>
           <li><a href="contact_us.php">CONTACT</a></li>
-          <li><a href="#">REQUEST'S</a></li>
+          <li><a href="requested_books.php">REQUEST'S</a></li>
           <li><a href="logout.php">LOGOUT</a></li>
         </ul>
       </div>
@@ -78,8 +78,7 @@ if ($_SESSION['login'] != true) {
         </div>
         <ul class="links">
           <h4>Main Menu</h4>
-          <li><a href="#">ISSUE</a></li>
-          <!-- <li><a href="#">RENEW</a></li> -->
+          <li><a href="issue-book-form.php">ISSUE</a></li>
           <li><a href="#">RETURN</a></li>
           <li><a href="add_book.php">ADD BOOKS</a></li>
           <li><a href="remove_book.php">REMOVE BOOKS</a></li>
@@ -95,11 +94,11 @@ if ($_SESSION['login'] != true) {
         <!-- First book self -->
         <div id="slider-container">
           <h1>MOTIVATION</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <button id="prev-btn" onclick="prevSlide('motivation')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('motivation')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="motivation-slider" class="slider-wrapper">
 
               <?php
               $sql = "SELECT * from `add_book` where `b_category` = 'MOTIVATION' ";
@@ -108,7 +107,7 @@ if ($_SESSION['login'] != true) {
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                       <p>" . $row['b_name'] . "</p></div>";
                 // echo "<div>".$row['b_name']."</div>";
               }
@@ -121,20 +120,20 @@ if ($_SESSION['login'] != true) {
 
         <div id="slider-container">
           <h1>ACTION & ADVENTURE</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <button id="prev-btn" onclick="prevSlide('action')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('action')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="action-slider" class="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'action' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                 <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
@@ -145,11 +144,11 @@ if ($_SESSION['login'] != true) {
 
         <div id="slider-container">
           <h1>FANTASY</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <button id="prev-btn" onclick="prevSlide('fantasy')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('fantasy')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="fantasy-slider" class="slider-wrapper">
 
               <?php
               $sql = "SELECT * from `add_book` where `b_category` = 'FANTASY' ";
@@ -158,7 +157,7 @@ if ($_SESSION['login'] != true) {
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                 <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
@@ -170,20 +169,20 @@ if ($_SESSION['login'] != true) {
 
         <div id="slider-container">
           <h1>HORROR</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <button id="prev-btn" onclick="prevSlide('horror')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('horror')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="horror-slider" class="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'horror' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                 <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
@@ -195,21 +194,21 @@ if ($_SESSION['login'] != true) {
 
 
         <div id="slider-container">
-          <h1>NOVELS</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <h1>SELF-HELP</h1>
+          <button id="prev-btn" onclick="prevSlide('novels')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('novels')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="novels-slider" class="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'self-help' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                 <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
@@ -221,20 +220,20 @@ if ($_SESSION['login'] != true) {
 
         <div id="slider-container">
           <h1>ANIMES</h1>
-          <button id="prev-btn" onclick="prevSlide()"> &lt; </button>
-          <button id="next-btn" onclick="nextSlide()"> &gt; </button>
+          <button id="prev-btn" onclick="prevSlide('animes')"> &lt; </button>
+          <button id="next-btn" onclick="nextSlide('animes')"> &gt; </button>
           <div class="books">
 
-            <div id="slider-wrapper">
+            <div id="animes-slider" class="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'anime' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {
                 $bname = $row['b_name'];
                 $bimg = $row['b_image'];
-                echo "<div class='slider-item'><a href=''><img src='images/$bimg' alt='$bname'></a>
+                echo "<div class='slider-item'><a href='book_open.php?b_id=" . $row['b_id'] . "'><img src='images/$bimg' alt='$bname'></a>
                 <p>" . $row['b_name'] . "</p></div>";
               }
               ?>
@@ -243,42 +242,51 @@ if ($_SESSION['login'] != true) {
         </div>
 
         <script>
-          const sliderWrapper = document.getElementById('slider-wrapper');
-          const prevBtn = document.getElementById('prev-btn');
-          const nextBtn = document.getElementById('next-btn');
+          // Your JavaScript code for slider functionality
+          const sliderIndex = {};
 
-          let currentPosition = 0;
-          const slideWidth = 220; // Adjust this based on your slider item width and margin
-          const totalSlides = document.querySelectorAll('.slider-item').length;
-          const visibleSlides = 4; // Adjust this based on how many slides you want to show at a time
+          function initSlider(category) {
+            sliderIndex[category] = 0;
+            showSlide(category);
+          }
 
-          function nextSlide() {
-            currentPosition -= slideWidth;
-            if (currentPosition < -(slideWidth * (totalSlides - visibleSlides))) {
-              currentPosition = 0;
+          function showSlide(category) {
+            const sliderItems = document.querySelectorAll(`#${category}-slider .slider-item`);
+            if (sliderIndex[category] >= sliderItems.length) {
+              sliderIndex[category] = 0;
             }
-            updatePosition();
-          }
-
-          function prevSlide() {
-            currentPosition += slideWidth;
-            if (currentPosition > 0) {
-              currentPosition = 0;
-            } else if (currentPosition < -(slideWidth * (totalSlides - visibleSlides))) {
-              currentPosition = -(slideWidth * (totalSlides - visibleSlides));
+            if (sliderIndex[category] < 0) {
+              sliderIndex[category] = sliderItems.length - 1;
             }
-            updatePosition();
+            for (let i = 0; i < sliderItems.length; i++) {
+              sliderItems[i].style.transform = `translateX(calc(-${sliderIndex[category]} * (100% + 20px)))`;
+            }
           }
 
-          function updatePosition() {
-            sliderWrapper.style.transform = `translateX(${currentPosition}px)`;
+          function nextSlide(category) {
+            sliderIndex[category]++;
+            showSlide(category);
           }
+
+          function prevSlide(category) {
+            sliderIndex[category]--;
+            showSlide(category);
+          }
+
+          // Initialize sliders for each category
+          initSlider('motivation');
+          initSlider('action');
+          initSlider('fantasy');
+          initSlider('horror');
+          initSlider('novels');
+          initSlider('animes');
         </script>
 
 
       </div>
     </div>
   </aside>
+  <script src="pop-up-form1.js"></script>
 </body>
 
 </html>
