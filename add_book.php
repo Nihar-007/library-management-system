@@ -49,12 +49,12 @@
             $result = mysqli_query($conn,$sql);
             if($result){
                 move_uploaded_file($temp_loc,$upload);
-                header("location: addmin.php");
+                header("location: admin_panel.php");
                 
             }
         }
         elseif(isset($_POST['cancel'])){
-            header("location: addmin.php");
+            header("location: admin_panel.php");
         }
     }
 ?>

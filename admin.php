@@ -25,7 +25,7 @@ if ($_SESSION['login'] != true) {
     <header>
         <span class="greet top">Welcome to admin Portal</span>
         <span><a href="admin_panel.php">Home</a></span>
-        <span class="logout top"><a href="logout.php">Logout</a></span>
+        <!-- <span class="logout top"><a href="logout.php">Logout</a></span> -->
         <span class="search">
             <form method="post">
                 <input type="text" name="isearch" id="isearc">

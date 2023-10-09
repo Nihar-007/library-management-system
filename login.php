@@ -205,7 +205,7 @@
       $_SESSION['login'] = true;
       $_SESSION['uname'] = $uname;
       if ($uname == 'admin' && $pass == 'admin123') {
-        header("location: admin.php"); //this will redirect user from login to Home page
+        header("location: admin_panel.php"); //this will redirect user from login to Home page
       } else {
         header("location : user.php");
       }

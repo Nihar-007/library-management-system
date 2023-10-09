@@ -16,6 +16,7 @@ $result = mysqli_query($conn, $sql);
 
 <body>
     <header>
+        <span><a href="admin_panel.php">Home</a></span>
         <!-- <span class="logout top"><a href="logout.php">Logout</a></span> -->
         <span class="search">
             <form method="post">

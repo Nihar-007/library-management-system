@@ -3,6 +3,10 @@ $conn = mysqli_connect("localhost", "root", "", "miniproject");
 // $sql = "SELECT * from `add_book`";
 // $result = mysqli_query($conn, $sql);
 // $num = mysqli_num_rows($result);
+session_start();
+if ($_SESSION['login'] != true) {
+  header("location : login.php");
+}
 
 ?>
 
@@ -40,14 +44,7 @@ $conn = mysqli_connect("localhost", "root", "", "miniproject");
           <li><a href="#">ABOUT US</a></li>
           <li><a href="#">CONTACT</a></li>
           <li><a href="#">REQUEST'S</a></li>
-          <li><select name="PURCHASE" id="Others">
-              <option value="#"><a href="#">PURCHASE</a></option>
-              <option value="#"><a href="#">BORROW</a></option>
-              <option value="psychology"><a href="#">RETURN</a></option>
-              <option value="Noval"><a href="#">RENEW</a></option>
-              <option value="Motavation"><a href="#">ADD BOOKS</a></option>
-              <option value="History"><a href="#">REMOVE BOOKS</a></option>
-            </select></li>
+          <li><a href="logout.php">LOGOUT</a></li>
         </ul>
       </div>
 
