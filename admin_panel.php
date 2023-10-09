@@ -85,6 +85,7 @@ $conn = mysqli_connect("localhost", "root", "", "miniproject");
           <li><a href="#">RETURN</a></li>
           <li><a href="add_book.php">ADD BOOKS</a></li>
           <li><a href="remove_book.php">REMOVE BOOKS</a></li>
+          <li><a href="admin.php">USER DATABASE</a></li>
           <hr>
 
         </ul>
