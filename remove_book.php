@@ -34,6 +34,8 @@ $result = mysqli_query($conn, $sql);
                         <th>Book Id</th>
                         <th>Book Name</th>
                         <th>Author Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
                         <th>Added On</th>
                         <th>Options</th>
                     </tr>
@@ -55,6 +57,8 @@ $result = mysqli_query($conn, $sql);
                                     <td>" . $num . "</td>
                                     <td>" . $row['b_name'] . "</td>
                                     <td>" . $row['b_author'] . "</td>
+                                    <td>". $row['b_category'] ."</td>
+                                    <td>". $row['b_quantity'] ."</td>
                                     <td>" . $row['added_on'] . "</td>
                                     <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='ed'>Edit</button></a>
                                     <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='ed'>Delete</button></a></td>
@@ -70,6 +74,8 @@ $result = mysqli_query($conn, $sql);
                                     <td>" . $num . "</td>
                                     <td>" . $row['b_name'] . "</td>
                                     <td>" . $row['b_author'] . "</td>
+                                    <td>". $row['b_category'] ."</td>
+                                    <td>". $row['b_quantity'] ."</td>
                                     <td>" . $row['added_on'] . "</td>
                                     <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='ed'>Edit</button></a>
                                     <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='ed'>Delete</button></a></td>
