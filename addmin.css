@@ -27,9 +27,7 @@
 
 .nav-right{
   display: flex;
-  justify-content: right;
-  position: relative;
-  right: -50px;
+  flex-grow: 5;
 
 }
 .login-container{
@@ -147,21 +145,26 @@ option{
   }
 }  */
 .nav-icon{
-  margin: 15px;
-  margin-right: -450px;
+  /* margin: 15px; */
+  margin-left: 15px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 .search-bar {
-  display: grid;
-  align-items: center;
+  /* display: grid;  */
   display: flex;
-  justify-items: center;
+  align-items: center;
+  /* justify-items: center; */
   background-color: rgb(255, 255, 255);
   border-radius: 4rem;
   max-width: 40rem;
   margin: 6px;
   height: 35px;
-  grid-template-columns: 2fr 4rem;
+  /* grid-template-columns: 2fr 4rem; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* flex-grow: 3; */
+  /* order: 8; */
   
 }
 

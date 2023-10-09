@@ -49,18 +49,19 @@ if ($_SESSION['login'] != true) {
       </div>
 
       <div class="nav-right">
-
-        <form action="#" method="post" class="search-bar">
-          <input type="text" name="search-query" placeholder="Search" />
-          <button type="submit" class="search-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" stroke-width="2" stroke="black" class="w-4 h-4" color="black">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-          </button>
-        </form>
-        <div class="nav-icon">
-          <button style="height: 18px; border: 0px;"><i class="fa-solid fa-bars fa-2xl"></i></button>
-        </div>
+        <!-- <div> -->
+          <form action="#" method="post" class="search-bar">
+            <input type="text" name="search-query" placeholder="Search" />
+            <button type="submit" class="search-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" stroke-width="2" stroke="black" class="w-4 h-4" color="black">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </button>
+          </form>
+          <div class="nav-icon">
+            <button style="height: 18px; border: 0px;"><i class="fa-solid fa-bars fa-2xl"></i></button>
+          </div>
+        <!-- </div> -->
       </div>
 
     </div>
@@ -78,7 +79,7 @@ if ($_SESSION['login'] != true) {
         <ul class="links">
           <h4>Main Menu</h4>
           <li><a href="#">BORROW</a></li>
-          <li><a href="#">RENEW</a></li>
+          <!-- <li><a href="#">RENEW</a></li> -->
           <li><a href="#">RETURN</a></li>
           <li><a href="add_book.php">ADD BOOKS</a></li>
           <li><a href="remove_book.php">REMOVE BOOKS</a></li>
@@ -101,7 +102,7 @@ if ($_SESSION['login'] != true) {
             <div id="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'MOTIVATION' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {
@@ -148,7 +149,7 @@ if ($_SESSION['login'] != true) {
             <div id="slider-wrapper">
 
               <?php
-              $sql = "SELECT * from `add_book`";
+              $sql = "SELECT * from `add_book` where `b_category` = 'FANTASY' ";
               $result = mysqli_query($conn, $sql);
               $num = mysqli_num_rows($result);
               while ($row = mysqli_fetch_assoc($result)) {

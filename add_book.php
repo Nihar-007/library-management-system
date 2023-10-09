@@ -9,16 +9,22 @@
     <form action="#" method="post" enctype="multipart/form-data">
     
     <label for="bname">Book Name :</label>
-    <input type="text" name="bname" autocomplete="off" ><br><br>
+    <input type="text" name="bname" autocomplete="off" required><br><br>
 
     <label for="aname">Author Name :</label>
-    <input type="text" name="aname" autocomplete="off" ><br><br>
+    <input type="text" name="aname" autocomplete="off" required><br><br>
+
+    <label for="cate">Category :</label>
+    <input type="text" name="cate" autocomplete="off" required><br><br>
+
+    <label for="qty">Quantity :</label>
+    <input type="number" name="qty" maxlength="2" autocomplete="off" required><br><br>
     
     <label for="bimage">Upload Image : </label>
-    <input type="file" name="file" autocomplete="off" ><br><br>
+    <input type="file" name="file" autocomplete="off" required><br><br>
 
     <input type="submit" name="submit">
-    <button name="cancel">Cancel</button>
+    <button name="cancel" formnovalidate>Cancel</button>
 
     </form>
 </body>
