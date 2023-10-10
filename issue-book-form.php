@@ -1,87 +1,37 @@
 <?php
-$conn = mysqli_connect("localhost","root","","miniproject");
-$uname = $_POST['username'];
-$bname = $_POST['username'];
-$uname = $_POST['username'];
-$uname = $_POST['username'];
-$sql = "INSERT into `requests` () values ()";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $conn = mysqli_connect("localhost", "root", "", "miniproject");
 
+    $uname = $_POST['username'];
+    $bname = $_POST['bookname'];
+    $id = $_POST['issuedate'];
+    $rd = $_POST['returndate'];
+    $charges = $_POST['charges'];
+    if(isset($_POST['submit'])){
+        $sql = "INSERT into `issue_book` (`uname`,`b_name`,`issue_date`,`return_date`,`charges`) values ('$uname','$bname','$id','$rd','$charges')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            header("location: admin_panel.php");
+        }
+    }
+    elseif(isset($_POST['cancel'])){
+        header("location: admin_panel.php");
+    }
+}
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/issue_book.css">
     <title>Book Issuance Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .issue-book-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 29px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            /* transform: scale(0); */
-            transition: all ease .5s;
-            padding-right: 43px;
-        }
-         
-        /* .issue-book-container.active-popup-issue{
-            transform: scale(1);
-        } */
-
-
-        h1 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        button[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        button[type="button"] {
-            background-color: red;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button[type="button"]:hover {
-            background-color: rgb(149, 9, 9);
-        }
-    </style>
 </head>
+
 <body>
-    <!-- <div class="btn_container">
-        <button class="btn">Issue Book</button>
-    </div> -->
     <div class="issue-book-container">
         <h1>Book Issuance Form</h1>
         <form method="post">
@@ -98,10 +48,10 @@ $sql = "INSERT into `requests` () values ()";
             <input type="date" id="returndate" name="returndate" required>
 
             <label for="charges">Charges</label>
-            <input type="text" id="charges" name="charges" required>
+            <input type="number" id="charges" name="charges" required>
 
-            <button type="submit">Submit</button>
-            <button type="button" class="cancel-btn">Cancel</button>
+            <button type="submit" name="submit">Submit</button>
+            <button name="cancel" class="cancel-btn" formnovalidate>Cancel</button>
         </form>
     </div>
 
@@ -119,4 +69,5 @@ $sql = "INSERT into `requests` () values ()";
         });
     </script> -->
 </body>
+
 </html>

@@ -1,0 +1,72 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+
+form.submitted {
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: inline;
+    position: relative;
+    margin: -8px;
+    margin-top: 10px;
+}
+
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+    border-radius: 6px;
+    width: 100px;
+    height: 31px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+button[name="cancel"] {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+    border-radius: 6px;
+    width: 100px;
+    height: 31px;
+}
+
+button[name="cancel"]:hover {
+    background-color: #c82333;
+}

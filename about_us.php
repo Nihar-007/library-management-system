@@ -3,47 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about_us.css">
     <title>About Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 12px 24px rgba(2,30,84,.1);
-            margin-top: 23px;
-            border-radius: 10px;
-        }
-        a{
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
     <header>

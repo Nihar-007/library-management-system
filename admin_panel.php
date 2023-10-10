@@ -18,7 +18,7 @@ if ($_SESSION['login'] != true) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="admin_panel.css">
+  <link rel="stylesheet" href="css/admin_panel.css">
   <title>Library management system</title>
 
 </head>
@@ -28,7 +28,7 @@ if ($_SESSION['login'] != true) {
     <div class="mynavbar">
 
       <div class="logo">
-        <img src="libaray_logo1.png" alt="LIBRARY" srcset>
+        <img src="images/libaray_logo1.png" alt="LIBRARY" srcset>
         <ul>
           <li>
             <h1>LIBRARY</h1>
@@ -73,13 +73,13 @@ if ($_SESSION['login'] != true) {
 
       <div class="sidebar">
         <div class="logo2">
-          <img src="libaray_logo1.png" alt="logo" class="default">
-          <h2>library</h2>
+          <img src="images/libaray_logo1.png" alt="logo" class="default">
+          <h2>Admin Panel</h2>
         </div>
         <ul class="links">
           <h4>Main Menu</h4>
           <li><a href="issue-book-form.php">ISSUE</a></li>
-          <li><a href="#">RETURN</a></li>
+          <li><a href="return_book.php">RETURN</a></li>
           <li><a href="add_book.php">ADD BOOKS</a></li>
           <li><a href="remove_book.php">REMOVE BOOKS</a></li>
           <li><a href="admin.php">USER DATABASE</a></li>

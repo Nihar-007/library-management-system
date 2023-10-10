@@ -18,7 +18,7 @@ if ($_SESSION['login'] != true) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="admin_panel.css">
+  <link rel="stylesheet" href="css/admin_panel.css">
   <title>Library management system</title>
 </head>
 
@@ -28,7 +28,7 @@ if ($_SESSION['login'] != true) {
     <div class="mynavbar">
 
       <div class="logo">
-        <img src="libaray_logo1.png" alt="LIBRARY" srcset>
+        <img src="images/libaray_logo1.png" alt="LIBRARY" srcset>
         <ul>
           <li>
             <h1>LIBRARY</h1>
@@ -64,17 +64,17 @@ if ($_SESSION['login'] != true) {
     <div class="wrapper">
       <div class="sidebar">
         <div class="logo2">
-          <img src="libaray_logo1.png" alt="logo">
+          <img src="images/libaray_logo1.png" alt="logo">
           <h2>libarary</h2>
         </div>
         <ul class="links">
           <h4>Category of book's</h4>
           <li><a href="#m">Motivation</a></li>
-          <li><a href="#ac">IT Computer</a></li>
-          <li><a href="#f">Maths</a></li>
-          <li><a href="#h">Commerce</a></li>
-          <li><a href="#n">Arts</a></li>
-          <li><a href="#a">Literature</a></li>
+          <li><a href="#ac">ACTION</a></li>
+          <li><a href="#f">FANTASY</a></li>
+          <li><a href="#h">HORROR</a></li>
+          <li><a href="#n">SELF-HELP</a></li>
+          <li><a href="#a">ANIMES</a></li>
           <hr>
         </ul>
       </div>
@@ -86,7 +86,7 @@ if ($_SESSION['login'] != true) {
           <div class="info">
             <!-- First book self -->
             <div id="slider-container">
-              <h1>MOTIVATION</h1>
+              <h1 id="m">MOTIVATION</h1>
               <button id="prev-btn" onclick="prevSlide('motivation')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('motivation')"> &gt; </button>
               <div class="books">
@@ -112,7 +112,7 @@ if ($_SESSION['login'] != true) {
             <!-- Second book self -->
 
             <div id="slider-container">
-              <h1>ACTION & ADVENTURE</h1>
+              <h1 id="ac">ACTION & ADVENTURE</h1>
               <button id="prev-btn" onclick="prevSlide('action')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('action')"> &gt; </button>
               <div class="books">
@@ -136,7 +136,7 @@ if ($_SESSION['login'] != true) {
             <!-- Third book self -->
 
             <div id="slider-container">
-              <h1>FANTASY</h1>
+              <h1 id="f">FANTASY</h1>
               <button id="prev-btn" onclick="prevSlide('fantasy')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('fantasy')"> &gt; </button>
               <div class="books">
@@ -161,7 +161,7 @@ if ($_SESSION['login'] != true) {
             <!-- fourth book self -->
 
             <div id="slider-container">
-              <h1>HORROR</h1>
+              <h1 id="h">HORROR</h1>
               <button id="prev-btn" onclick="prevSlide('horror')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('horror')"> &gt; </button>
               <div class="books">
@@ -187,7 +187,7 @@ if ($_SESSION['login'] != true) {
 
 
             <div id="slider-container">
-              <h1>SELF-HELP</h1>
+              <h1 id="n">SELF-HELP</h1>
               <button id="prev-btn" onclick="prevSlide('novels')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('novels')"> &gt; </button>
               <div class="books">
@@ -212,7 +212,7 @@ if ($_SESSION['login'] != true) {
             <!-- sixth book self -->
 
             <div id="slider-container">
-              <h1>ANIMES</h1>
+              <h1 id="a">ANIMES</h1>
               <button id="prev-btn" onclick="prevSlide('animes')"> &lt; </button>
               <button id="next-btn" onclick="nextSlide('animes')"> &gt; </button>
               <div class="books">

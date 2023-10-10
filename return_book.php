@@ -10,14 +10,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM requests";
+$sql = "SELECT * FROM `issue_book`";
 $result = mysqli_query($conn, $sql);
 
 if (!$result) {
     die("Error: " . mysqli_error($conn));
 }
-
-
 mysqli_close($conn);
 ?>
 
@@ -26,18 +24,19 @@ mysqli_close($conn);
 
 <head>
     <link rel="stylesheet" href="css/requested_books.css">
-    <title>Display Requests</title>
+    <title>Return Book</title>
 </head>
 
 <body>
-    <h2>Requests List</h2>
+    <h2>Issued Book's List</h2>
     <table border="1">
         <tr>
             <th>S. NO.</th>
             <th>Username</th>
             <th>Book Name</th>
-            <th>Author Name</th>
-            <th>Publisher Name</th>
+            <th>Issue Date</th>
+            <th>Return Date</th>
+            <th>Charges</th>
             <th>Status</th>
         </tr>
         <?php
@@ -45,11 +44,12 @@ mysqli_close($conn);
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $num . "</td>";
-            echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['uname'] . "</td>";
             echo "<td>" . $row['b_name'] . "</td>";
-            echo "<td>" . $row['b_author'] . "</td>";
-            echo "<td>" . $row['b_publisher'] . "</td>";
-            echo "<td><a href='delete_request.php?sno_del=".$row['r_id']."'>Completed</a></td>";
+            echo "<td>" . $row['issue_date'] . "</td>";
+            echo "<td>" . $row['return_date'] . "</td>";
+            echo "<td>" . $row['charges'] . "</td>";
+            echo "<td><a href='delete_return_book.php?sno_del=" . $row['sno'] . "'>Return</a></td>";
             echo "</tr>";
             $num++;
         }

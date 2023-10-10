@@ -10,17 +10,17 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/remove_book.css">
     <title>Remove book</title>
 </head>
 
 <body>
     <header>
-        <span><a href="admin_panel.php">Home</a></span>
+        <span id="home"><a href="admin_panel.php" class="home_page">Home</a></span>
         <!-- <span class="logout top"><a href="logout.php">Logout</a></span> -->
         <span class="search">
             <form method="post">
-                <input type="text" name="isearch" id="isearc">
+                <input type="text" name="isearch" id="isearc" class="search-input">
                 <button type="submit" class="ed sbtn" name='bsearch'>Search</button>
             </form>
         </span>
@@ -60,8 +60,8 @@ $result = mysqli_query($conn, $sql);
                                     <td>". $row['b_category'] ."</td>
                                     <td>". $row['b_quantity'] ."</td>
                                     <td>" . $row['added_on'] . "</td>
-                                    <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='ed'>Edit</button></a>
-                                    <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='ed'>Delete</button></a></td>
+                                    <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='edit-btn'>Edit</button></a>
+                                    <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='delete-btn'>Delete</button></a></td>
                                     </tr>";
                                     $num++;
                                 }
@@ -77,8 +77,8 @@ $result = mysqli_query($conn, $sql);
                                     <td>". $row['b_category'] ."</td>
                                     <td>". $row['b_quantity'] ."</td>
                                     <td>" . $row['added_on'] . "</td>
-                                    <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='ed'>Edit</button></a>
-                                    <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='ed'>Delete</button></a></td>
+                                    <td><a href='edit_book.php?sno_edit=".$row['b_id']."'><button class='edit-btn'>Edit</button></a>
+                                    <a href='delete_book.php?sno_delete=".$row['b_id']."'><button class='delete-btn'>Delete</button></a></td>
                                     </tr>";
                                 $num++;
                             }
