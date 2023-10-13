@@ -69,5 +69,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
     </script> -->
 </body>
+<!-- <script src="jquery-3.7.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#issuedate').datepicker({
 
+            maxDate: "3D",
+            minDate: "-0D" 
+        });
+    })
+</script> -->
 </html>
