@@ -19,6 +19,7 @@ if ($_SESSION['login'] != true) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/admin_panel.css">
+  <script src="jquery-3.7.1.min.js"></script>
   <title>Library management system</title>
 
 </head>
@@ -51,13 +52,22 @@ if ($_SESSION['login'] != true) {
       <div class="nav-right">
         <!-- <div> -->
         <form action="#" method="post" class="search-bar">
-          <input type="text" name="search-query" placeholder="Search" />
+          <input type="text" name="search-query" id="searchQuery" placeholder="Search" />
+          <div class="autocom-box" id="autocomplete"></div>
           <button type="submit" class="search-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40" stroke-width="2" stroke="black" class="w-4 h-4" color="black">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
+            <i class="fa-solid fa-search"></i>
           </button>
         </form>
+        <!-- modal for search -->
+        <div id="modal">
+          <div id="modal-form">
+            <h2>Search</h2>
+            <hr>
+            <div id="open"></div>
+            <div class="close-btn close">&times;</div>
+          </div>
+        </div>
+        <!-- modal close -->
         <div class="nav-icon">
           <button style="height: 18px; border: 0px;"><i class="fa-solid fa-bars fa-2xl"></i></button>
         </div>
@@ -281,7 +291,34 @@ if ($_SESSION['login'] != true) {
           initSlider('novels');
           initSlider('animes');
         </script>
+        <script>
+          $(document).ready(function() {
 
+            $('#searchQuery').on('keyup', function() {
+              $('#modal').show();
+              var search = $(this).val();
+              $.ajax({
+                url: 'search_ajax.php',
+                method: 'POST',
+                data: {
+                  search: search
+                },
+                success: function(data) {
+                  $('#open').html(data);
+                }
+              });
+            });
+
+            $('body').on('click', function() {
+              $('#modal').hide();
+            });
+
+            $(document).on('click', '.close-btn', function() {
+              $('#modal').hide();
+            });
+
+          });
+        </script>
 
       </div>
     </div>

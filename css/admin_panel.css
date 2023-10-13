@@ -199,6 +199,49 @@ height: 40px; */
 .search-bar input::placeholder {
   color: #b3c8e9;
 }
+#modal {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+  overflow: scroll;
+}
+
+#modal-form {
+  background: #fff;
+  position: relative;
+  width: 30%;
+  top: 20%;
+  left: calc(50% - 15%);
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.close-btn {
+  background-color: red;
+  color: white;
+  height: 30px;
+  width: 30px;
+  font-size: 25px;
+  line-height: 30px;
+  position: absolute;
+  /* border-radius: 50%; */
+  text-align: center;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+}
+
+.close-btn:hover {
+  background-color: #c9184a;
+}
+.img-search{
+  height: 40px;
+}
 
 .search-btn {
   background-color: transparent;
