@@ -2,7 +2,7 @@
 // session_start();
 // $sno = $_SESSION['sno'];
 $sno = $_GET['sno_del'];
-$conn = mysqli_connect('localhost','root','','miniproject');
+$conn = mysqli_connect('localhost','root','Nihar007@#','miniproject');
 $sql = "DELETE from `issue_book` where `sno` = $sno";
 $result = mysqli_query($conn,$sql);
 // echo $sno;

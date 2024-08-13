@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "miniproject");
+$conn = mysqli_connect("localhost", "root", "Nihar007@#", "miniproject");
 $sql = "SELECT * from `login`";
 $result = mysqli_query($conn, $sql);
 // $row1=mysqli_fetch_assoc($result);

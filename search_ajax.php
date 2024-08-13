@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','miniproject');
+$conn = mysqli_connect('localhost','root','Nihar007@#','miniproject');
 
 extract($_POST);
 $sql = "SELECT * from `add_book` where `b_name` like '%$search%' ";

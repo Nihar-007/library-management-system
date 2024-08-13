@@ -1,7 +1,7 @@
 <?php
 
 $sno = $_GET['sno_edit'];
-$conn = mysqli_connect('localhost', 'root', '', 'miniproject');
+$conn = mysqli_connect('localhost', 'root', 'Nihar007@#', 'miniproject');
 $sql = "SELECT * from `login` where `sno` = $sno";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);

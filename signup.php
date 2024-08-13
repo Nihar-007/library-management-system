@@ -3,16 +3,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $username = "localhost";
     $root = "root";
-    $pwd = "";
+    $pwd = "Nihar007@#";
     $database = "miniproject";
 
     $conn = mysqli_connect($username, $root, $pwd, $database);
-
+    
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $uname = $_POST["uname"];
     $pass = $_POST["pass"];
     $cpass = $_POST["cpass"];
+    
+    $fname = str_replace(">","&gt;",$fname);
+    $fname = str_replace("<","&lt;",$fname);
+    $fname = str_replace("'","&apos;",$fname);
+    $fname = str_replace('"',"&quot;",$fname);
+    $fname = str_replace("&","&amp;",$fname);
+
+    $lname = str_replace(">","&gt;",$lname);
+    $lname = str_replace("<","&lt;",$lname);
+    $lname = str_replace("'","&apos;",$lname);
+    $lname = str_replace('"',"&quot;",$lname);
+    $lname = str_replace("&","&amp;",$lname);
+
+    $uname = str_replace(">","&gt;",$uname);
+    $uname = str_replace("<","&lt;",$uname);
+    $uname = str_replace("'","&apos;",$uname);
+    $uname = str_replace('"',"&quot;",$uname);
+    $uname = str_replace("&","&amp;",$uname);
+
+    $pass = str_replace(">","&gt;",$pass);
+    $pass = str_replace("<","&lt;",$pass);
+    $pass = str_replace("'","&apos;",$pass);
+    $pass = str_replace('"',"&quot;",$pass);
+    $pass = str_replace("&","&amp;",$pass);
+
+
 
     $exists_sql = "SELECT * FROM `login` WHERE `uname` = '$uname' ";
     $result = mysqli_query($conn, $exists_sql);

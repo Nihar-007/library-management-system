@@ -2,11 +2,23 @@
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $username = "localhost";
     $root = "root";
-    $pwd = "";
+    $pwd = "Nihar007@#";
     $database = "miniproject";
     $conn = mysqli_connect($username, $root, $pwd, $database);
     $uname = $_POST["uname"];
     $pass = $_POST["pass"];
+    
+    $uname = str_replace(">","&gt;",$uname);
+    $uname = str_replace("<","&lt;",$uname);
+    $uname = str_replace("'","&apos;",$uname);
+    $uname = str_replace('"',"&quot;",$uname);
+    $uname = str_replace("&","&amp;",$uname);
+
+    $pass = str_replace(">","&gt;",$pass);
+    $pass = str_replace("<","&lt;",$pass);
+    $pass = str_replace("'","&apos;",$pass);
+    $pass = str_replace('"',"&quot;",$pass);
+    $pass = str_replace("&","&amp;",$pass);
 
     $sql = "SELECT * FROM `login` where `uname` = '$uname' AND `pwd` = '$pass'";
     $result = mysqli_query($conn, $sql);

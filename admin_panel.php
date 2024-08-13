@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "miniproject");
+$conn = mysqli_connect("localhost", "root", "Nihar007@#", "miniproject");
 // $sql = "SELECT * from `add_book`";
 // $result = mysqli_query($conn, $sql);
 // $num = mysqli_num_rows($result);

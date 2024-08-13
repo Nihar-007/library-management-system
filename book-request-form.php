@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $conn = mysqli_connect("localhost", "root", "", "miniproject");
+    $conn = mysqli_connect("localhost", "root", "Nihar007@#", "miniproject");
     $uname = $_POST['username'];
     $bname = $_POST['bookName'];
     $bauthor = $_POST['authorName'];

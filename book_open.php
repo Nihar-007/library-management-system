@@ -1,6 +1,6 @@
 <?php
     $b_id = $_GET['b_id'];
-    $conn = mysqli_connect("localhost","root","","miniproject");
+    $conn = mysqli_connect("localhost","root","Nihar007@#","miniproject");
     $sql = "SELECT * from `add_book` where `b_id` = $b_id";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
